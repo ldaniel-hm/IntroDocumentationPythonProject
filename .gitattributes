@@ -1,6 +1,7 @@
+_sigueEstosPasos/* linguist-vendored
+doc/* linguist-vendored
 Clientes/* linguist-generated
 *.py linguist-detectable=true
 *.html linguist-detectable=false
 *.htm linguist-detectable=false
 *.js linguist-detectable=false
-*.py linguist-detectable=true
