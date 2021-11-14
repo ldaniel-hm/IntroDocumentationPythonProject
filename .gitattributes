@@ -1,8 +1,4 @@
-_sigueEstosPasos/* linguist-vendored
-doc/* linguist-vendored
-Clientes/* linguist-generated
+* linguist-vendored
+*.py linguist-vendored=false
 *.py linguist-language=Python
-*.py linguist-detectable=true
-*.html linguist-detectable=false
-*.htm linguist-detectable=false
-*.js linguist-detectable=false
+
