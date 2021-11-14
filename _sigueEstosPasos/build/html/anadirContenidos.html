@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Añadir y Quitar Contenidos &#8212; documentación de Tutorial de Sphinx con Python - 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Escribir en reStructuredText" href="loBasicoDeRst.html" />
+    <link rel="prev" title="Corregir Enlaces" href="corregirEnlaces.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">documentación de Tutorial de Sphinx con Python - 0.1</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="corregirEnlaces.html" title="Corregir Enlaces"
+             accesskey="P">anterior</a> |
+          <a href="loBasicoDeRst.html" title="Escribir en reStructuredText"
+             accesskey="N">siguiente</a> |
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="anadir-y-quitar-contenidos">
+<h1><span class="target" id="index-0"></span>Añadir y Quitar Contenidos<a class="headerlink" href="#anadir-y-quitar-contenidos" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>En teoría no es necesario añadir más información sobre las clases, módulos o paquetes, pues todo lo que se muestra son los miembros públicos de cada módulo.</p>
+<p>Pero ya que vuestro documento será evaluado, los profesores necesitamos saber cómo se han construido todas vuestras clases.
+Para ello tendrás que añadir las siguientes directivas para <span class="target" id="index-1"></span>mostrar los miembros privados:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">members</span><span class="p">:</span>
+<span class="p">:</span><span class="n">private</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Por ejemplo, el fichero <code class="docutils literal notranslate"><span class="pre">Clientes.Cliente.rst</span></code> debes modificarlo con el siguiente contenido:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Clientes</span><span class="o">.</span><span class="n">Cliente</span> <span class="n">module</span>
+<span class="o">-----------------------</span>
+
+<span class="o">..</span> <span class="n">automodule</span><span class="p">::</span> <span class="n">Clientes</span><span class="o">.</span><span class="n">Cliente</span>
+   <span class="p">:</span><span class="n">members</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">private</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>  <span class="c1"># &lt;&lt;&lt; Incluye esto</span>
+   <span class="p">:</span><span class="n">special</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>  <span class="c1"># &lt;&lt;&lt; Incluye esto</span>
+   <span class="p">:</span><span class="n">undoc</span><span class="o">-</span><span class="n">members</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">show</span><span class="o">-</span><span class="n">inheritance</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Vuelve a ejecutar <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">html</span></code> para comprobar cómo la información sobre Cliente.py ha cambiado.</p>
+<p>Si tuvieras problemas usa la extensión Napoleon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>    <span class="c1"># docString de los .py</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>   <span class="c1"># Resaltar algunas palabras</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>   <span class="c1"># Mostrar el código fuente</span>
+<span class="p">]</span>
+
+<span class="c1"># Napoleon settings</span>
+<span class="n">napoleon_google_docstring</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_numpy_docstring</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_include_private_with_doc</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_include_special_with_doc</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_admonition_for_examples</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_admonition_for_notes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_admonition_for_references</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_ivar</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_param</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_rtype</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Para conocer más: <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html">https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html</a></p>
+<p>También deberías <span class="target" id="index-2"></span>mostrar el enunciado del ejercicio y
+<span class="target" id="index-3"></span>mostrar una explicación de aquellos aspectos que se indiquen en los criterios de evaluación.
+Todo esto tendrás que añadirlo en el fichero <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentación</span> <span class="n">de</span>  <span class="n">Clientes</span> <span class="n">y</span> <span class="n">Cuentas</span>
+<span class="o">=====================================</span>
+
+<span class="o">..</span> <span class="n">toctree</span><span class="p">::</span>
+    <span class="p">:</span><span class="n">maxdepth</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">Contents</span><span class="p">:</span>
+
+    <span class="n">enunciado</span>   <span class="c1"># Crea el fichero enunciado.rst con el enunciado.</span>
+    <span class="c1"># Añade aquí cuantos ficheros .rst necesites. Haz pocos.</span>
+    <span class="c1"># Es mejor una estructura jerárquica como los módulos.</span>
+    <span class="c1"># proyecto.rst, proyecto.enunciado.rst, proyecto.niveles.rst, etc ...</span>
+
+    <span class="c1"># A continuación pon la documentación de la API</span>
+    <span class="n">modules</span>
+</pre></div>
+</div>
+<p>También te puede interesar <span class="target" id="index-4"></span>quitar contenidos. Por ejemplo, de cada fichero .rst puedes quitar el siguiente
+contenido que genera el script <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Tabla de contenido</h3>
+          <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="documentarPython.html">Documentar programas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepararPaquetes.html">Convertir los Módulos en Paquetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalarSphinx.html">Instalar Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inicioRapido.html">Inicio Rápido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modificarConfiguracion.html">Modificar Configuración e Índice Inicial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generarDocumentacion.html">Generar la Documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corregirEnlaces.html">Corregir Enlaces</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Añadir y Quitar Contenidos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loBasicoDeRst.html">Escribir en reStructuredText</a></li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Búsqueda</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Ir a" />
+            </form>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="corregirEnlaces.html" title="Corregir Enlaces"
+              >anterior</a> |
+            <a href="loBasicoDeRst.html" title="Escribir en reStructuredText"
+              >siguiente</a> |
+            <a href="genindex.html" title="Índice General"
+              >índice</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/anadirContenidos.rst.txt"
+                rel="nofollow">Mostrar el código</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Derechos de autor 2021, L. Daniel.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

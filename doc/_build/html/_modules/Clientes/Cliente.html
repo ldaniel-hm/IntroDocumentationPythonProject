@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes.Cliente &#8212; documentación de Clientes y Cuentas - 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Índice General"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Índice de Módulos Python"
+             >módulos</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">documentación de Clientes y Cuentas - 0.1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Código de módulo</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Clientes.Cliente</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Código fuente para Clientes.Cliente</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Este módulo codifica un único tipo de cliente.</span>
+<span class="sd">El cliente se caracteriza por su DNI y su Cuenta Bancaria.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">from</span> <span class="nn">Identificadores.DNI</span> <span class="kn">import</span> <span class="n">DNI</span>
+<span class="kn">from</span> <span class="nn">Cuentas.CuentaBase</span> <span class="kn">import</span> <span class="n">CuentaBase</span>
+
+
+<div class="viewcode-block" id="Cliente"><a class="viewcode-back" href="../../Clientes.Cliente.html#Clientes.Cliente.Cliente">[documentos]</a><span class="k">class</span> <span class="nc">Cliente</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clase que modela los clientes de un banco</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dni</span><span class="p">:</span> <span class="n">DNI</span><span class="p">,</span> <span class="n">cuenta</span><span class="p">:</span> <span class="n">CuentaBase</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor de clientes de un banco.</span>
+
+<span class="sd">        :param dni: Documento identificativo.</span>
+<span class="sd">        :param cuenta: Cuentas del banco.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__dni</span><span class="p">:</span> <span class="n">DNI</span> <span class="o">=</span> <span class="n">dni</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__cuenta</span><span class="p">:</span> <span class="n">CuentaBase</span> <span class="o">=</span> <span class="n">cuenta</span>
+
+<div class="viewcode-block" id="Cliente._metodo_oculto"><a class="viewcode-back" href="../../Clientes.Cliente.html#Clientes.Cliente.Cliente._metodo_oculto">[documentos]</a>    <span class="k">def</span> <span class="nf">_metodo_oculto</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Un método oculto para poner a prueba a Sphinx</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estoy oculto.&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__dni</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Cliente.__str__"><a class="viewcode-back" href="../../Clientes.Cliente.html#Clientes.Cliente.Cliente.__str__">[documentos]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">          Generara un string legible sobre los objetos Clientes</span>
+
+<span class="sd">          :return: un string</span>
+<span class="sd">          &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">::Los datos del cliente son::</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__dni</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__cuenta</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span></div></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Test&quot;&quot;&quot;</span>
+    <span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="n">DNI</span><span class="p">(</span><span class="s2">&quot;un nombre&quot;</span><span class="p">,</span> <span class="s2">&quot;una dirección&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">CuentaBase</span><span class="p">(</span><span class="mi">500</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cliente</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navegación</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Índice General"
+             >índice</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Índice de Módulos Python"
+             >módulos</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">documentación de Clientes y Cuentas - 0.1</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Código de módulo</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Clientes.Cliente</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Derechos de autor 2021, L. Daniel.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

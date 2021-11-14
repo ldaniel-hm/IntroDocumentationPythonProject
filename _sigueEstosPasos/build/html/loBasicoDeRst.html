@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Escribir en reStructuredText &#8212; documentación de Tutorial de Sphinx con Python - 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Añadir y Quitar Contenidos" href="anadirContenidos.html" /> 
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">documentación de Tutorial de Sphinx con Python - 0.1</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="anadirContenidos.html" title="Añadir y Quitar Contenidos"
+             accesskey="P">anterior</a> |
+          <a href="genindex.html" title="Índice General"
+             accesskey="I">índice</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="escribir-en-restructuredtext">
+<h1>Escribir en reStructuredText<a class="headerlink" href="#escribir-en-restructuredtext" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Se dan unas nociones muy básicas sobre <span class="target" id="index-0"></span>sintaxis del lenguaje de marcas <code class="docutils literal notranslate"><span class="pre">rst</span></code></p>
+<section id="estructura-del-documento">
+<h2><span class="target" id="index-1"></span>Estructura del documento<a class="headerlink" href="#estructura-del-documento" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul>
+<li><p>Cabecera:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">Título</span>
+<span class="o">---------</span>
+</pre></div>
+</div>
+</li>
+<li><p>Subcabecera (subtítulo o sección):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subtítulo</span>
+<span class="o">=========</span>
+</pre></div>
+</div>
+</li>
+<li><p>Subsubcabecera (sección o subsección):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Subsubtítulo</span>
+<span class="o">^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+</li>
+<li><p>Párrafo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Una</span> <span class="n">línea</span> <span class="n">en</span> <span class="n">blanco</span> <span class="n">crea</span> <span class="n">un</span> <span class="n">párrafo</span> <span class="n">nuevo</span><span class="o">.</span>
+
+<span class="n">Inicio</span> <span class="n">de</span> <span class="n">otro</span> <span class="n">párrafo</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Toda indentación, si fuera necesaria, será de 4 espacios.</p></li>
+</ul>
+</section>
+<section id="estilos-de-letra">
+<h2><span class="target" id="index-2"></span>Estilos de letra<a class="headerlink" href="#estilos-de-letra" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul>
+<li><p><strong>Negrita</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">negrita</span><span class="o">**</span>
+</pre></div>
+</div>
+</li>
+<li><p><em>Cursiva</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">cursiva</span><span class="o">*</span>
+</pre></div>
+</div>
+</li>
+<li><p><cite>Texto interpretado</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`Texto interpretado`
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Literal</span> <span class="pre">inline</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``Literal inline``
+</pre></div>
+</div>
+</li>
+<li><dl>
+<dt>Literal en párrafos.</dt><dd><p>Inicia o finaliza un párrafo con <code class="docutils literal notranslate"><span class="pre">::</span></code>.
+Después, empieza otro párrafo pero tabula su contenido.
+Si quieres varios párrafos tabula cada párrafo.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
+
+    <span class="n">Texto</span> <span class="n">literal</span>
+
+    <span class="n">En</span> <span class="n">varios</span> <span class="n">párrafos</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="listas">
+<h2><span class="target" id="index-3"></span>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">¶</a></h2>
+<section id="listas-no-enumeradas">
+<h3>Listas no Enumeradas<a class="headerlink" href="#listas-no-enumeradas" title="Enlazar permanentemente con este título">¶</a></h3>
+<ul class="simple">
+<li><p>Todo elemento de la lista empieza con <cite>-</cite>, <cite>*</cite> o <cite>+</cite>.</p></li>
+<li><dl class="simple">
+<dt>Este es el segundo item.</dt><dd><ul>
+<li><p>Que tiene un lista anidada.</p></li>
+<li><dl class="simple">
+<dt>Se puede anidar más</dt><dd><ul>
+<li><p>Tercer nivel ;)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Elemento final.</p></li>
+</ul>
+<p>La lista anterior se ha creado con este código:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- Todo elemento de la lista empieza con `-`, `*` o `+`.
+- Este es el segundo item.
+    - Que tiene un lista anidada.
+    - Se puede anidar más.
+        - Tercer nivel ;)
+- Elemento final.
+</pre></div>
+</div>
+</section>
+<section id="listas-enumeradas">
+<h3>Listas Enumeradas<a class="headerlink" href="#listas-enumeradas" title="Enlazar permanentemente con este título">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Todo elemento de la lista empezará con un número seguido de un punto: P.e. <code class="docutils literal notranslate"><span class="pre">1.</span></code></p></li>
+<li><dl class="simple">
+<dt>Alternativamente puedes usar <code class="docutils literal notranslate"><span class="pre">#.</span></code> para auto-enumeración.</dt><dd><ol class="arabic simple">
+<li><p>Puedes anidar cualquier tipo de lista.</p></li>
+<li><dl class="simple">
+<dt>Puede ser <strong>no</strong> enumerada o enumerada</dt><dd><ul class="simple">
+<li><p>Tercer nivel ;)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Elemento final.</p></li>
+</ol>
+<p>La lista anterior se ha creado con este código:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. Todo elemento de la lista empezará con un número seguido de un punto: P.e. ``1.``
+#. Alternativamente puedes usar ``#.`` para auto-enumeración.
+    #. Puedes anidar cualquier tipo de lista.
+    #. Puede ser **no** enumerada o enumerada
+        * Tercer nivel ;)
+#. Elemento final.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="quiero-saber-mas">
+<h2>Quiero saber más<a class="headerlink" href="#quiero-saber-mas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para el proyecto no necesitas saber más. No obstante,</p>
+<ul class="simple">
+<li><p>Si quieres saber más, tienes una referencia rápida <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">aquí</a>.</p></li>
+<li><p>Si quieres saber mucho más, siempre te queda la página oficial de <a class="reference external" href="https://www.sphinx-doc.org/es/master/usage/restructuredtext/">Sphinx</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Tabla de contenido</h3>
+          <p class="caption" role="heading"><span class="caption-text">Contenidos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="documentarPython.html">Documentar programas Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prepararPaquetes.html">Convertir los Módulos en Paquetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalarSphinx.html">Instalar Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inicioRapido.html">Inicio Rápido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modificarConfiguracion.html">Modificar Configuración e Índice Inicial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generarDocumentacion.html">Generar la Documentación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corregirEnlaces.html">Corregir Enlaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anadirContenidos.html">Añadir y Quitar Contenidos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Escribir en reStructuredText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#estructura-del-documento">Estructura del documento</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estilos-de-letra">Estilos de letra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listas">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quiero-saber-mas">Quiero saber más</a></li>
+</ul>
+</li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Búsqueda</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Ir a" />
+            </form>
+          </div>
+
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="anadirContenidos.html" title="Añadir y Quitar Contenidos"
+              >anterior</a> |
+            <a href="genindex.html" title="Índice General"
+              >índice</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/loBasicoDeRst.rst.txt"
+                rel="nofollow">Mostrar el código</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Derechos de autor 2021, L. Daniel.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
